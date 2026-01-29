@@ -1,0 +1,273 @@
+.air-quality {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  grid-column: span 1;
+}
+
+.air-quality h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.aqi-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.aqi-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 2px solid;
+  transition: all 0.3s ease;
+  min-height: 140px;
+  justify-content: space-between;
+}
+
+.aqi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.aqi-day {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+.aqi-emoji {
+  font-size: 24px;
+  margin: 5px 0;
+  line-height: 1;
+}
+
+.aqi-value {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 5px 0;
+  line-height: 1;
+}
+
+.aqi-level {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 3px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.pollutant-info {
+  width: 100%;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pollutant {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin: 3px 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.2;
+}
+
+/* =========== АДАПТИВНОСТЬ =========== */
+
+/* Большие планшеты и маленькие ноутбуки (992px - 1200px) */
+@media (max-width: 1200px) {
+  .aqi-forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .aqi-card {
+    min-height: 130px;
+    padding: 12px 8px;
+  }
+  
+  .air-quality {
+    padding: 18px;
+  }
+}
+
+/* Планшеты (768px - 992px) */
+@media (max-width: 992px) {
+  .aqi-forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .air-quality {
+    grid-column: span 2; /* На планшетах занимает 2 колонки */
+  }
+  
+  .aqi-card {
+    min-height: 120px;
+    padding: 10px 6px;
+  }
+  
+  .aqi-emoji {
+    font-size: 22px;
+  }
+  
+  .aqi-value {
+    font-size: 16px;
+  }
+  
+  .aqi-level {
+    font-size: 10px;
+  }
+  
+  .pollutant {
+    font-size: 10px;
+  }
+}
+
+/* Большие телефоны (576px - 768px) */
+@media (max-width: 768px) {
+  .aqi-forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .air-quality {
+    grid-column: 1 / -1; /* На всю ширину */
+    padding: 16px;
+  }
+  
+  .aqi-card {
+    min-height: 130px;
+    padding: 12px 10px;
+  }
+  
+  .aqi-day {
+    font-size: 13px;
+  }
+  
+  .aqi-emoji {
+    font-size: 20px;
+  }
+  
+  .aqi-value {
+    font-size: 17px;
+  }
+}
+
+/* Маленькие телефоны (480px - 576px) */
+@media (max-width: 576px) {
+  .aqi-forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .air-quality {
+    padding: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .air-quality h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .aqi-card {
+    min-height: 120px;
+    padding: 10px 8px;
+  }
+  
+  .aqi-emoji {
+    font-size: 18px;
+  }
+  
+  .aqi-value {
+    font-size: 16px;
+  }
+  
+  .aqi-level {
+    font-size: 9px;
+  }
+  
+  .pollutant {
+    font-size: 9px;
+  }
+}
+
+
+/* Ландшафтная ориентация телефонов */
+@media (max-height: 500px) and (orientation: landscape) {
+  .aqi-forecast-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  
+  .aqi-card {
+    min-height: 100px;
+    padding: 8px 5px;
+  }
+  
+  .aqi-emoji {
+    font-size: 20px;
+  }
+  
+  .aqi-value {
+    font-size: 16px;
+  }
+  
+  .aqi-level {
+    font-size: 9px;
+  }
+  
+  .pollutant-info {
+    margin-top: 5px;
+    padding-top: 5px;
+  }
+}
+
+/* Для очень высоких экранов (больше 1440px) */
+@media (min-width: 1440px) {
+  .aqi-forecast-grid {
+    gap: 15px;
+  }
+  
+  .aqi-card {
+    min-height: 150px;
+    padding: 18px 12px;
+  }
+  
+  .aqi-emoji {
+    font-size: 28px;
+  }
+  
+  .aqi-value {
+    font-size: 20px;
+  }
+}
+
+/* Загрузка */
+.aqi-card.loading {
+  opacity: 0.5;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}

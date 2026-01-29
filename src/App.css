@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  background-image: url(./nature.jpg);
+ background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px; 
+  grid-template-rows: 40px auto auto auto; 
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.current-weather {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4; /* Занимает 2 строки, начиная со 2-й (спущен вниз) */
+}
+
+.forecast {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3; /* Начинается со 2-й строки (спущен) */
+}
+
+.air-quality {
+ 
+  grid-row: 3 / 4;
+}
+
+/* Sun Times - ПОД Current Weather */
+.sun-times {
+  grid-column: 1 / 3; /* От Current Weather до Monthly Rainfall */
+  grid-row: 4 / 5; /* 4-я строка */
+  font-size: 1.05em;
+}
+
+/* Other Cities - ВЫСОКИЙ БЛОК СПРАВА */
+.other-cities {
+  grid-column: 3 / 4;
+  grid-row: 1 / 5; /* Занимает с 2-й по 5-ю строку (как Current Weather + Sun Times) */
+}
+
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .App {
+    padding: 25px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .dashboard-grid {
+    grid-template-columns: 280px 1fr 280px;
+    max-width: 1200px;
+  }
+  
+  .current-weather {
+    width: 280px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .App {
+    padding: 20px;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px auto auto auto auto auto;
+    gap: 15px;
+    max-width: 800px;
+  }
+  
+  /* На мобилках убираем сложную сетку */
+  .current-weather,
+  .forecast,
+  .air-quality,
+  .sun-times,
+  .other-cities {
+    grid-column: 1 / 2;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    margin-top: 0;
+  }
+  
+  .current-weather {
+    grid-row: 2 / 3;
+    height: 280px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .forecast {
+    grid-row: 3 / 4;
+  }
+  
+  .air-quality {
+    grid-row: 4 / 5;
+  }
+  
+  .sun-times {
+    grid-row: 5 / 6;
+  }
+  
+  .other-cities {
+    grid-row: 6 / 7;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 15px;
+  }
+  
+  .dashboard-grid {
+    gap: 12px;
+  }
+  
+  .current-weather {
+    height: 250px;
+    padding: 20px;
+  }
+  
+  .current-weather h2 {
+    font-size: 24px;
+  }
+  
+  .current-weather .temperature {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .current-weather {
+    height: 220px;
+    padding: 15px;
+  }
+  
+  .current-weather .temperature {
+    font-size: 36px;
   }
 }

@@ -1,0 +1,100 @@
+.sun-times {
+  height: 200px;
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.279);
+
+}
+
+.sun-times h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  height: calc(100% - 35px);
+}
+
+.city-card {
+    background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.729);
+  padding: 8px 6px;
+  border-radius: 6px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: visible;
+}
+
+.city-card:hover{
+    box-shadow: 0 4px 15px rgba(248, 84, 34, 0.91);
+}
+
+.city-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  line-height: 1.2;
+}
+
+.sun-times-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sun-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  height: 30px;
+}
+
+.time-icon {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.time-details {
+  flex: 1;
+  min-width: 0;
+  overflow: visible;
+}
+
+.time-label {
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.time-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  overflow: visible;
+}

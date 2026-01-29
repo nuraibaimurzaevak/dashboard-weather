@@ -1,0 +1,114 @@
+.monthly-rainfall {
+  height: 220px;
+  width: 700px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  font-size: 1.05em;
+  margin-left: 0px;
+}
+
+.rainfall-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.rainfall-header h3 {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rainfall-legend {
+  display: flex;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #ffffff;
+}
+
+.legend-color {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.legend-color.rain {
+  background: #667eea;
+}
+
+.legend-color.sun {
+  background: #f6ad55;
+}
+
+.rainfall-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100px;
+  padding-top: 5px;
+}
+
+.month-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.bar-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3px;
+  width: 100%;
+}
+
+.month-name {
+  font-size: 10px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+.rain-value {
+  font-size: 9px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.bar-container {
+  width: 100%;
+  height: 100%;
+  background: #fff8f8;
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.rain-bar {
+  width: 100%;
+  background: #667eea;
+  min-height: 0;
+}
+
+.sun-bar {
+  width: 100%;
+  background: #f6ad55;
+  min-height: 0;
+}
