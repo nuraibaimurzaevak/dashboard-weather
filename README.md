@@ -1,70 +1,241 @@
-# Getting Started with Create React App
+# Дашборд погоды с качеством воздуха
+# 📌 Обзор проекта
+Комплексный дашборд погоды с акцентом на мониторинг качества воздуха (AQI), прогнозом на неделю и данными о восходе/закате для множества городов.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🌟 Ключевые особенности
+1. Мониторинг качества воздуха
+   
+Индекс AQI с цветовой индикацией (1-5 уровней)
 
-## Available Scripts
+Детальные показатели: PM2.5 и PM10 в µg/m³
 
-In the project directory, you can run:
+Прогноз AQI на 7 дней
 
-### `npm start`
+Категории качества: От "Хорошего" до "Очень плохого"
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Погодные данные
+   
+Текущая погода: Температура, ощущаемая температура
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Недельный прогноз: Максимальные/минимальные температуры
 
-### `npm test`
+Детализированные условия: Влажность, давление, скорость ветра
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Состояние неба: Ясно, облачно, туман и т.д.
 
-### `npm run build`
+3. Глобальный охват
+   
+Восход/закат для 6+ городов по всему миру
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Сравнение погодных условий между городами
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Местное время для каждого местоположения
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Система оповещений
+   
+Предупреждения об экстремальных погодных условиях
 
-### `npm run eject`
+Уведомления о плохом качестве воздуха
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Рекомендации по здоровью при высоком AQI
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 📊 Структура данных
+Качество воздуха (AQI):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Уровень 1: Хороший (0-50)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Уровень 2: Умеренный (51-100)
 
-## Learn More
+Уровень 3: Нездоровый для чувствительных групп (101-150)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Уровень 4: Нездоровый (151-200)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Уровень 5: Очень плохой (201-300+)
 
-### Code Splitting
+Параметры измерения:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+PM2.5: Мелкодисперсные частицы (опасные для здоровья)
 
-### Analyzing the Bundle Size
+PM10: Крупнодисперсные частицы
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Температура: В градусах Цельсия
 
-### Making a Progressive Web App
+Влажность: В процентах
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Давление: В гектопаскалях (hPa)
 
-### Advanced Configuration
+🏗️ Архитектура проекта
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+weather-dashboard/
 
-### Deployment
+├── public/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+│ ├── index.html
 
-### `npm run build` fails to minify
+|
+├── src/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+│ ├── components/
+
+│ │ ├── Header.jsx
+
+│ │ ├── CurrentWeather.jsx
+
+│ │ ├── Forecast.jsx
+
+│ │ ├── MonthlyRainfall.jsx
+
+│ │ ├── OtherCities.jsx
+
+│ │ ├── SunTimes.jsx
+
+│ │ ├── AirQuality.jsx
+
+│ │ └── *.css файлы для каждого компонента
+
+│ ├── services/
+
+│ │ ├── weatherAPI.js
+
+│ │ └── weatherService.js
+
+│ ├── App.jsx
+
+│ ├── App.css
+
+│ ├── index.js
+
+│ ├── index.css
+
+│ └── ...
+
+├── package.json
+
+├── README.md
+
+└── .gitignore
+
+
+    
+# 🎨 Дизайн и UI/UX
+Цветовая схема для AQI:
+
+.aqi-level-1 { background: #00E400; } /* Хороший */
+
+.aqi-level-2 { background: #FFFF00; } /* Умеренный */
+
+.aqi-level-3 { background: #FF7E00; } /* Нездоровый для групп риска */
+
+.aqi-level-4 { background: #FF0000; } /* Нездоровый */
+
+.aqi-level-5 { background: #8F3F97; } /* Очень плохой */
+
+Компоненты интерфейса:
+
+Основной заголовок
+
+Название города (Dhaka)
+
+Текущая дата и время
+
+Иконка погодных условий
+
+Прогноз на неделю
+
+Дни недели с датами
+
+Температурный диапазон (макс/мин)
+
+Индикаторы AQI для каждого дня
+
+Панель качества воздуха
+
+Карточки AQI на 7 дней
+
+Детальные показатели PM2.5 и PM10
+
+Тренд изменения качества воздуха
+
+Глобальная панель
+
+Восход/закат для мировых городов
+
+Сравнение погодных условий
+
+Быстрое переключение между городами
+
+Детализированная информация
+
+Параметры ветра, влажности, давления
+
+Информация о видимости
+
+Система оповещений
+
+# 🔧 Настройка и API
+Необходимые API ключи:
+
+VITE_AIR_VISUAL_API_KEY=        # Для качества воздуха
+
+VITE_OPENWEATHER_API_KEY=       # Для погоды
+
+VITE_SUNRISE_SUNSET_API_KEY=    # Для времени восхода/заката
+
+VITE_TIMEZONE_API_KEY=          # Для временных зон
+
+Интеграции API:
+
+AirVisual API - качество воздуха
+
+OpenWeatherMap API - погодные данные
+
+Sunrise-Sunset API - время восхода/заката
+
+TimeZoneDB API - конвертация времени
+
+# 📱 Адаптивный дизайн
+Брейкпоинты:
+
+/* Мобильные (вертикально) */
+
+@media (max-width: 640px) {
+}
+
+/* Планшеты (горизонтально) */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+}
+
+/* Десктопы */
+
+@media (min-width: 1025px) {
+}
+# 🚀 Быстрый старт
+Установка:
+bash
+# 1. Клонирование
+git clone https://github.com/yourusername/weather-aqi-dashboard.git
+
+# 2. Установка зависимостей
+npm install
+
+# 3. Настройка окружения
+cp .env.example .env.local
+# Заполните API ключи в .env.local
+
+# 4. Запуск
+npm run dev
+
+Сборка:
+
+ Development сборка
+ 
+npm run build:dev
+
+ Production сборка
+ 
+npm run build
+
+ Preview production сборки
+ 
+npm run preview
